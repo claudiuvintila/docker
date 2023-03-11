@@ -132,5 +132,7 @@ RUN set -ex; \
 COPY *.sh upgrade.exclude /
 COPY config/* /usr/src/nextcloud/config/
 
+RUN ln -s /etc/php-fpm.d /usr/local/etc/php-fpm.d
+
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["%%CMD%%"]
